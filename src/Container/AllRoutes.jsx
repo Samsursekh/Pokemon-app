@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import FavoritePage from './FavoritePage'
 import Navbar from './Navbar'
+import PokemonDetails from './PokemonDetails'
 import PokemonPage from './PokemonPage'
 import TypesPage from './TypesPage'
 
@@ -12,7 +13,8 @@ const AllRoutes = () => {
         <Route path='/pokemon' element={ <PokemonPage />} />
         <Route path='/types' element={ <TypesPage />} />
         <Route path='/favorites' element={ <FavoritePage />} />
-    </Routes>
+        <Route path="/pokemon/:name" element={<PokemonDetails />} /> 
+     </Routes>
   )
 }
 

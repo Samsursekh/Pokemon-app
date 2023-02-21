@@ -2,6 +2,7 @@ import React from "react";
 import "../Style/Navbar.css";
 import { useState, useEffect } from "react";
 import PokemonDetails from "./PokemonDetails";
+import { Link } from "react-router-dom";
 const pageSize = 10;
 
 const PokemonPage = () => {
@@ -50,9 +51,11 @@ const PokemonPage = () => {
     <div id="container">
       {data.map((item) => {
         return (
-          <div onClick={handleDetails} className="cards" key={item.name}>
+            <Link key={item.name} to={`/pokemon/${item.name}`}>
+          <div className="cards" >
             {item.name}
           </div>
+          </Link>
         );
       })}
       <div className="pagination">{updatePagination()}</div>
